@@ -1,0 +1,341 @@
+/* general content */
+html body{
+    padding: 0;
+    margin: 0;
+}
+
+#pagecontent{
+    width: 1366px;
+    margin-top: 145px;
+    margin-left: calc( calc( 100vw - 1366px ) / 2 );
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+/* text */
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+h1{
+    font-family: 'Roboto', sans-serif;
+    margin-top: 0;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    font-size: 28px;
+}
+h2{
+    font-family: 'Roboto', sans-serif;
+    margin-top: 0;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+p{
+    font-family: 'Roboto', sans-serif;
+    margin-top: 0;
+    margin-bottom: 24px;
+    font-size: 16px;
+}
+b{
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+ul{
+    font-family: 'Roboto', sans-serif;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+li{
+    font-family: 'Roboto', sans-serif;
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+/* buttons */
+.button{
+    width: 300px;
+    height: 48px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    margin-right: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.horizontalbuttons{
+    display: flex;
+    flex-direction: row;
+}
+.buttonstyle1{
+    background-color: #248508;
+    border: solid #248508 2px;
+    color: white;
+}
+.buttonstyle2{
+    background-color: white;
+    border: solid #248508 2px;
+}
+.buttonstyle3{
+    background-color: white;
+    border: solid white 2px;
+    color: #248508;
+}
+.buttonstyle4{
+    border: solid white 2px;
+}
+
+    /* navigation bar */
+    #nav{
+        position: fixed;
+        top: 0;
+        height: 145px;
+        width: calc(100% - 192px);
+        z-index: 10;
+
+        padding-left: 96px;
+        padding-right: 96px;
+
+        background-color: white;
+        box-shadow: 3px 0px 12px rgba(0, 0, 0, 0.2);
+    }
+    #topnav{
+        height: 48px;
+        width: 100%;
+        border-bottom: solid lightgrey 1px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+
+    }
+    #topnav p{
+        color: gray;
+        font-size: 12px;
+        margin-left: 36px;
+        margin-bottom: 0;
+    }
+
+    #mainnav{
+        height: 96px;
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #navlogo{
+        height: 48px;
+        width: 262px;
+    }
+    #searchbar{
+        width: 576px;
+        height: 36px;
+        
+        display: flex;
+        align-items: center;
+
+        border: solid lightgray 1px;
+        border-radius: 4px;
+    }
+    #diensten{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    #diensten b{
+        margin-left: 36px;
+    }
+
+    /* header block */
+    #header{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+    #headermedia{
+        width: 50%;
+        
+        background-color: black;
+    }
+    #headertekst{
+        width: calc(50% - 192px);
+        background-color: white;
+
+        padding: 60px 96px 60px 96px; 
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    ul{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    li{
+        background: url('../img/checkMark.jpg') no-repeat left center;
+        background-size: 21px;
+        padding-left: 33px;
+    }
+
+    /* USP block voor voice */
+    #voiceUSPS{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        border-bottom: solid lightgrey 1px; 
+    }
+    #voiceUSPBlock{
+        width: 50%;
+        padding: 60px 0px 60px 0px; 
+        display: flex;
+        flex-direction: column;
+    }
+    .USP{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 24px;
+    }
+    .USPIcon{
+        max-height: auto;
+        width: 120px;
+        margin-right: 36px;
+    }
+    .USPText{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* alinea setup block */
+    .textblock{
+        width: calc(100% - 192px);
+        padding: 96px;
+        border-bottom: solid lightgrey 1px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .alineaimage{
+        width: auto;
+        height: 376px;
+        border-radius: 8px;
+    }
+    .alineatext{
+        max-width: 776px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .alineapadding{
+        width: 96px;
+    }  
+
+    /* multiple small blocks block */
+    .threeblockshorizontal{
+        width: calc(100% - 192px);
+        padding: 96px 96px 72px 96px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border-bottom: solid lightgrey 1px;
+    }
+    .threeblockshorizontal h1{
+        max-width: 716px;
+        margin-bottom: 48px;
+    }
+    .blockcontainer{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .block{
+        width: 305px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .block h2{
+        color: #248508;
+    }
+    .psmall{
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .uspicon{
+        width: auto;
+        height: 110px;
+        margin-bottom: 12px;
+    }
+    .referenceimage{
+        width: 168px;
+        height: 168px;
+        margin-bottom: 12px;
+    }
+
+    /* faq */
+    #faq{
+        padding: 96px 96px 72px 96px;
+        border-bottom: solid lightgrey 1px; 
+    }
+    .vraag{
+        border: solid lightgrey 1px;
+        padding: 12px 48px 0 48px;
+        margin-bottom: 24px;
+    }
+    
+    /* footer */
+    #footer{
+        background-color: black;
+        color: white;
+        padding: 96px 84px 96px 84px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .footerColumn{
+        display: flex;
+        flex-direction: column;
+        width: 25vw;
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+    #footerColumnContact{
+        display: flex;
+        flex-direction: column;
+        width: 50vw;
+        margin-left: 12px;
+        margin-right: 12px;
+    }
+    #contactColumns{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    .h1light{
+        font-weight: 300;
+    }
+    .footerColumn b{
+        margin-top: 0;
+        margin-bottom: 24px;
+    }
+
+    /* Voice conversie block */
+    /* !zie ook header styles! */
+    #contactInfo{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 24px;
+    }

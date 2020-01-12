@@ -1,0 +1,5 @@
+../img/uspicon1.JPG
+../img/uspicon2.JPG
+../img/uspicon3.JPG
+../img/productimg4.png
+../img/productimg2.jpg
