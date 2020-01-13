@@ -3,24 +3,29 @@ var DynamicPageManager = (function(){
 
     //----------------------------------------- PRIVATE ---------------------------------------------//
 
-    // collect information about where user came from out of url and referrer data
+    // store the webpage url and any possible (parameter) data in a variable
     var _GetURL = function(){
         var url_string = window.location.href;
         var url = new URL(url_string);
         return url;
     }
 
+    // collect information about where user came from out of an url paramater called "refer" 
+    // this could be a any parameter sent through the url, but here is used it to get the specific webpage the visitor came from
     var _GetReferLink = function(){
         var url = _GetURL();
         var referLink = url.searchParams.get('refer');
         return referLink;
     }
 
+    // get the wepage the referred the visitor to this webpage
     var _GetReferSite = function(){
         var referSite = document.referrer;
         return referSite;
     }
 
+    // collect information about where user came from out of an url paramater called "refer" 
+    // this could be a any parameter sent through the url, but here is used it to get the search query used on an earlier page
     var _GetSearchTerm = function(){
         var url = _GetURL()
         var searchTerm = url.searchParams.get("search");
@@ -33,29 +38,34 @@ var DynamicPageManager = (function(){
         return tempArray;
     }
 
+    // fill an array with elements with the "dynamicText" class
     var _GetDynamicTextFields = function(){
         var dynamicTextNodes = document.getElementsByClassName('dynamicText');
         var dynamicTextArray = _NodelistToArray(dynamicTextNodes);
         return dynamicTextArray;
     }
+
+    // fill an array with elements with the "dynamicImg" class
     var _GetDynamicImgs = function(){
         var dynamicImgNodes = document.getElementsByClassName('dynamicImg');
         var dynamicImgArray = _NodelistToArray(dynamicImgNodes);
         return dynamicImgArray;
     }
 
+    // store the element with the id "headermedia" in a variable so a specific media can be inserted later
     var _GetDynamicHeaderMedia = function(){
         var dynamicHeaderMedia = document.getElementById('headermedia');
         return dynamicHeaderMedia;
     }
 
-    var _GetDynamicTextBlocks = function(){
-        var dynamicBlockNodes = document.getElementsByClassName('textblock');
+    // fill an array with elements with the "dynamicblock" class
+    var _GetDynamicBlocks = function(){
+        var dynamicBlockNodes = document.getElementsByClassName('dynamicBlock');
         var dynamicBlockList = _NodelistToArray(dynamicBlockNodes);
         return dynamicBlockList;
     }
 
-    // make datasets to fill the dynamic content with (sort of replacement for a complete database)
+    // choose a specific dataset to fill the page with based on visitor data like the refer webpage and link
     var _ChooseDataset = function(){
         var referLink = _GetReferLink();
         var referSite = _GetReferSite();
@@ -80,6 +90,7 @@ var DynamicPageManager = (function(){
         return chosenDataset;
     }
 
+    // get the filepath for a dataset to be loaded into the page
     var _GetFilePath = function(datasetNumber, imgtrue){
         var filePath;
         if(imgtrue == false){
@@ -91,8 +102,9 @@ var DynamicPageManager = (function(){
         return filePath;
     }
 
+    // setup specific page layouts to fit with different datasets
     var _SetupPage = function(){
-        var dynamicBlocks = _GetDynamicTextBlocks();
+        var dynamicBlocks = _GetDynamicBlocks();
         var searchTerm = _GetSearchTerm();
         var datasetNumber = _ChooseDataset();
         if(datasetNumber < 3){
@@ -113,6 +125,7 @@ var DynamicPageManager = (function(){
         }
     }
 
+    // load the data of the chosen dataset into an array so it can be put into the page
     var _LoadDataset = function(imgtrue){
         var tempArray = [];
         var rawFile = new XMLHttpRequest();
@@ -134,6 +147,7 @@ var DynamicPageManager = (function(){
         return tempArray;
     }
 
+    // load a specific kind of media into the header 
     var _LoadHeaderMedia = function(){
         var headerMedia = _GetDynamicHeaderMedia();
         var datasetNumber = _ChooseDataset();
@@ -176,7 +190,7 @@ var DynamicPageManager = (function(){
         }
     }
 
-    // fill dynamic content fileds with content from datasets
+    // fill dynamic text content fileds with content from datasets
     var _FillTextContent = function(){
         var dynamicTextArray = _GetDynamicTextFields();
         var datasetArray = _LoadDataset(false);
@@ -185,6 +199,7 @@ var DynamicPageManager = (function(){
         }
     }
 
+    // fill dynamic image content fileds with content from datasets 
     var _FillImgContent = function(){
         var dynamicTextArray = _GetDynamicImgs();
         var datasetArray = _LoadDataset(true);
@@ -195,6 +210,7 @@ var DynamicPageManager = (function(){
 
     //----------------------------------------- PUBLIC ----------------------------------------------//
 
+    // execute all code needed to build the page
     var BuildPage = function(){
         _SetupPage();
         _FillImgContent();
