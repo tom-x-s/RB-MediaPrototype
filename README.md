@@ -13,21 +13,20 @@ Then linking to dynamicPage.js from any webpage head wil give it acces to the fu
 For text elements:                                                          "dynamicText"
 For image elements:                                                         "dynamicImg"
 For whole blocks of content:                                                "dynamicBlock"
-
 For changing the media in the header for something specific:                "headermedia"
 
 #### After designating the dynamic elements in the html code save the content you want displayed on the page into a ".txt" file.
 
--Files containing text based content should be named in the format of datasettexts(ID).txt for example: "datasettexts1.txt"
+Files containing text based content should be named in the format of datasettexts(ID).txt for example: "datasettexts1.txt"
 The text in each row will be read and loaded into elements designated with the "dynamicText" class. going through the page from top to bottom.
 
--Files containing image based content should be named in the format of datasetimgs(ID).txt for example: "datasetimgs1.txt"
+Files containing image based content should be named in the format of datasetimgs(ID).txt for example: "datasetimgs1.txt"
 Each row should contain an url which can be set as the source of an image element. All url's in the txt file will be loaded into the images designated with the "dynamicImg" class. 
 
 
 #### For larger or more advanced changes these following two can be used. The however require you to build you're own code for things like conditions and building media elements. 
 
--Dynamic blocks can be built into the webpage. By giving them the "dynamicBlock" class, you can later define conditions for when certain blocks should be displayed and when the should not be. This should be done in the "_SetupPage" function. An example of what this could look like:
+Dynamic blocks can be built into the webpage. By giving them the "dynamicBlock" class, you can later define conditions for when certain blocks should be displayed and when the should not be. This should be done in the "_SetupPage" function. An example of what this could look like:
 
 ```javascript
 
@@ -61,7 +60,7 @@ Each row should contain an url which can be set as the source of an image elemen
 
 ```
 
--designating a header with the "headermedia" id can be used to build a specific form of media, like a video, canvas or special kind of image from code so it can be used in the header. This should be done in the "_SetupPage" function. An example of what this could look like:
+Designating a header with the "headermedia" id can be used to build a specific form of media, like a video, canvas or special kind of image from code so it can be used in the header. This should be done in the "_SetupPage" function. An example of what this could look like:
 
 ```javascript
 
@@ -116,4 +115,4 @@ var _LoadHeaderMedia = function(){
 
 ```
 
-### Once you have everything setup the rest will happen on it's own. The code will execute on pageload and all content will be loaded in based on the conditions you set for it.
+#### Once you have everything setup the rest will happen on it's own. The code will execute on pageload and all content will be loaded based on the conditions you set for it.
