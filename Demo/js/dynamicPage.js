@@ -54,8 +54,9 @@ var DynamicPageManager = (function(){
 
     // store the element with the id "headermedia" in a variable so a specific media can be inserted later
     var _GetDynamicHeaderMedia = function(){
-        var dynamicHeaderMedia = document.getElementById('headermedia');
-        return dynamicHeaderMedia;
+        var temp = document.getElementsByClassName('headerMedia');
+        var dynamicHeaderMedia = _NodelistToArray(temp);
+        return dynamicHeaderMedia[0];
     }
 
     // fill an array with elements with the "dynamicblock" class
